@@ -1,0 +1,123 @@
+Entire model Totals: 19246 vertices, 28674 polygons or 28845 triangles, 93 objects
+
+Version# Vertices PolygonFaces Comments
+2014.Feb.03
+6.32		no change to models
+	Adjust nacelle glow.
+
+2014.Feb.03
+6.31		no change to models
+	Change key for Configuration dialog from Tab to Equal, for compliance with FG 3.0
+
+2009.Dec.11
+6.3	19246	28674 updated model
+	Join property base into -set.xml files, remove include section.
+	Update ambient and reflective colors to match rgb colors.
+	Update bussard color range to match danube runabout.
+	Remove second bussard object, combine off and on into one.
+	Fix hole in windscreen, and another in hull around forward sensor.
+	Fix edge in windscreen seal.
+
+2009.Feb.04
+6.21		no change to 3d models
+	Notice an inconsistancy in the version number printed, and in
+	  the atmospheric boundaries were not consistant across the 2 
+	  models.
+	No significant changes.
+
+2008.Jul.21
+6.2		no change to 3d models
+	Increase volume for rumble sound.
+
+2008.Feb.17
+6.1		no change to 3d models
+	Fix maximum speed to reflect correct atmospheric boundaries.
+	Clean up all text files and separate repetitive sections.
+
+2008.Feb.09
+6.0	19354	28791	updated model
+	Update for compatibility with new release: FlightGear v1.0
+	Fix warp glow for osg, and improve nacelle glow overall.
+	Replace entire nasal script with newer and faster version recently developed.
+	Adjust maximum speed to reflect atmospheric boundaries.
+	Fix bug in catching rapid requests for engine speed.
+	Fix long standing bug in jumping when too close to ground,
+	  change all model origins and center references.
+	Remove excess polygons from aft panels hidden behind the hull.
+	Fix responsiveness of hover up from cold start.
+	Enable rumble sound at startup.
+	Compatibility with previous Flightgear version 0.9.10:
+	  start with --aircraft=shuttle9-09
+	Compatibility with development version of Flightgear OSG:
+	  same version as the default for 1.0 PLIB
+	  start with --aircraft=shuttle9
+
+2007.Jul.01
+5.3	20706	31664	no change to 3-d model
+	Update nasal file.
+		Fix bug in popup tip not showing
+
+2007.Jun.18
+5.2	20706	31664	no change to 3-d model
+	Update offset specifications.
+	Enhance nav and beacon halos for distance and nighttime visibility.
+
+2007.Apr.28
+5.1	20706	31664	no change to 3-d model
+	Update nasal file.
+		Improve hover handling and ground detection.
+	Reduce filesize of splash screen image.
+
+2007.Mar.12
+5	20706	31664
+	Resized everything to match other shuttle and runabout size.
+	Found more messed up vertices and polygons to clean up in
+	   rear_hull7 and 9.
+	Changed windscreen_seal to double-sided.
+
+2007.Mar.10
+4.1	20761	31743
+	Updated nasal scripting, dialog, and sound effects.
+
+2007.Feb.28
+4	20761	31743
+	Cored out impulse pod for correct shape of Impulse engine glow.
+	Updated nasal scripts for anti-grav hovering.
+	Fixed holes in window corner, and around sensor skirt.
+	Smoothened hull.
+	Cleaned up extra "Explorer" vertices.
+
+2007.Feb.15
+3	21644	31799
+	Added simple impulse glow, but incorrect placement.
+	Removed some orphaned edges I missed in insignia and windscreen.
+	Updated nasal scripts for:
+	   Syncronized sounds with visual effects relative to velocity.
+	   on-screen help.
+	Edited bright materials for no specularity.
+	Shadows should not be double-sided.
+	Change warpCover texture to adjust number of horizontal lines in lens/cover.
+
+2007.Feb.07
+2	21584	31719	First release
+	Revert warp coil to original, and remove hidden polygons
+	   Warp coil now at 5610 polygons
+	Cleaned up "Explorer" polygons and edges.
+	Added Intake Glow
+	Recolored hull
+	Applied scale/rotation.
+
+1	19224	27614
+	Flattened warpcoil from 27848 polygons to only 352.
+	Added warpglow curves
+	Edited phaser decal errors, "74656 VOYAGER" decal errors
+	Separated insignia to separate object
+	Added beacons, nav lights, warp halo
+	Re-faced windows.
+	Added Shadow
+	Added bussard glow
+	Fix holes in nacelle around gold decal.
+	Clean up vertices.
+
+0	35288	56568
+	original unedited.

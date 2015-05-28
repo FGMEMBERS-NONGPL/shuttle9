@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <sim>
+	<aero>shuttlecraft</aero>
+	<status>beta</status>
+	<description>Type 9 Shuttlecraft for 0.9.10</description>
+	<aircraft-version>6.31</aircraft-version>
+	<author>Mohammad 'MK84' Khair</author>
+		<!-- original model mesh from www.trekmeshes.ch
+		Cleaned up some errors, added engine textures,
+		and animations  		by Stewart Andreason 	-->
+	<aircraft-status>
+		<fdm>beta</fdm>
+		<exterior>production</exterior>
+		<cockpit>none</cockpit>
+		<instrumentation>none</instrumentation>
+		<procedures>alpha</procedures>
+		<system-modeling>alpha</system-modeling>
+		<failure-modeling>alpha</failure-modeling>
+		<checklist-support>alpha</checklist-support>
+		<tutorial-support>alpha</tutorial-support>
+		<documentation>alpha</documentation>
+		<usability>beta</usability>  
+		<eye-candy>alpha</eye-candy>
+	</aircraft-status>
+	<type-of-aircraft>
+		<is-futuristic type="bool">true</is-futuristic>
+		<is-shuttlecraft type="bool">true</is-shuttlecraft>
+		<is-ufo type="bool">true</is-ufo>
+	</type-of-aircraft>
+
+	<flight-model>ufo</flight-model>
+
+	<startup>
+		<splash-texture>Aircraft/shuttle9/shuttle9-splash.rgb</splash-texture>
+	</startup>
+
+	<chase-distance-m type="double">-25.0</chase-distance-m>  
+
+	<model>
+		<path>Aircraft/shuttle9/Models/shuttle9.xml</path>
+		<shuttle9>
+			<lighting>
+				<bussard-glow-red type="float">0</bussard-glow-red>
+				<bussard-glow-blgr type="float">0</bussard-glow-blgr>
+				<engine-glow type="double">0</engine-glow>  <!-- intake manifold - engine cover -->
+				<nav-lights-state type="bool">true</nav-lights-state>
+				<nav-light-switch type="double">2</nav-light-switch>	<!-- default= stay on -->
+				<warp-glow type="double">0</warp-glow>   <!-- backlighting inside nacelle -->
+			</lighting>
+			<position>
+				<altitude-agl-ft type="double">0</altitude-agl-ft>
+				<crash-wow type="bool">false</crash-wow>
+				<hover-rise type="double">0</hover-rise>		<!-- yoke movement -->
+				<landing-wow type="bool">false</landing-wow>
+				<shadow-alt-agl-ft type="double">0</shadow-alt-agl-ft>
+				<skid-wow type="double">0</skid-wow>
+				<squeal-wow type="bool">false</squeal-wow>
+			</position>
+			<shadow type="bool">true</shadow>  <!-- faster than a 3d rendered shadow -->
+			<sound>
+				<engines-volume-level type="double">0</engines-volume-level>
+				<pitch-level type="double">0</pitch-level>
+			</sound>
+			<systems>
+				<impulse-request type="bool">true</impulse-request>
+				<impulse-level type="double">1</impulse-level>		<!-- impulse exhaust glow -->
+				<power-switch type="bool">true</power-switch>		<!-- default: power up at startup -->
+				<warp1-request type="bool">true</warp1-request>
+				<warp1-level type="double">1</warp1-level>
+				<warp2-request type="bool">true</warp2-request>
+				<warp2-level type="double">1</warp2-level>
+			</systems>
+		</shuttle9>
+		<livery>
+			<insignia type="double">1</insignia>
+		</livery>
+	</model>
+
+	<help>
+		<title>Type 9 Shuttlecraft</title>
+		<key n="0">
+			<name>equal=</name>
+			<desc>open/close configuration dialog</desc>
+		</key>
+		<key n="1">
+			<name>tilde~</name>
+			<desc>Shutdown/Startup Master Power</desc>
+		</key>
+		<key n="2">
+			<name>backslash</name>
+			<desc>Engage/Disengage Impulse engine</desc>
+		</key>
+		<key n="3">
+			<name>space</name>
+			<desc>Engage/Disengage Warp Engine</desc>
+		</key>
+		<key n="4">
+			<name>[ ]</name>
+			<desc>Increase/Decrease Maximum Speed</desc>
+		</key>
+		<key n="5">
+			<name>Home</name>
+			<desc>Anti-grav VTOL up</desc>
+		</key>
+		<key n="6">
+			<name>End</name>
+			<desc>Anti-grav VTOL down</desc>
+		</key>
+		<key n="7">
+			<name>b</name>
+			<desc>Reverse direction - fly backwards</desc>
+		</key>
+		<key n="20">
+			<name>Joystick</name>
+			<desc>buttons:</desc>
+		</key>
+		<key n="21">
+			<name>flaps button</name>
+			<desc>Inc/Dec Max Speed power level</desc>
+		</key>
+		<key n="22">
+			<name>elevator trim</name>
+			<desc>Anti-grav VTOL up/down</desc>
+		</key>
+		<key n="23">
+			<name>fire trigger</name>
+			<desc>Reverse direction - fly backwards</desc>
+		</key>
+	</help>
+
+	<menubar>
+		<default>
+			<menu n="10">
+				<label>Shuttlecraft</label>
+				<enabled type="bool">true</enabled>
+				<item>
+					<label>Configuration</label>
+					<binding>
+						<command>nasal</command>
+						<script>shuttle9.showDialog()</script>
+					</binding>
+				</item>
+			</menu>
+		</default>
+	</menubar>
+
+	<panel>
+		<visibility>false</visibility>
+	</panel>
+
+	<rendering>
+		<redout>
+			<enabled type="bool">false</enabled>
+		</redout>
+	</rendering>
+
+	<sound>
+		<path>Aircraft/shuttle9/Sound/shuttle9-sound.xml</path>
+	</sound>
+
+	<view n="0">
+		<internal>false</internal>
+		<config>
+			<!-- x/y/z == right/up/back -->
+			<x-offset-m>0</x-offset-m>
+			<y-offset-m>0.0</y-offset-m>
+			<z-offset-m>-0.75</z-offset-m>
+			<pitch-offset-deg>0.0</pitch-offset-deg>
+		</config>
+	</view>
+ </sim>
+
+ <controls>
+	<lighting>
+		<beacon type="bool">true</beacon>
+		<nav-lights type="bool">true</nav-lights>
+		<strobe type="bool">false</strobe>
+	</lighting>
+ </controls>
+
+ <input>
+	<keyboard>
+		<key n="61">
+			<name>Equal=</name>
+			<desc>Show configuration dialog</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.showDialog()</script>
+			</binding>
+		</key>
+		<key n="126">
+			<name>Tilde~</name>
+			<desc>Startup/Shutdown Master Power</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.toggle_power(1)</script>
+			</binding>
+		</key>
+		<key n="32">
+			<name>space</name>
+			<desc>Engage/Disengage Warp engine</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.toggle_warp1()</script>
+			</binding>
+		</key>
+		<key n="92">
+			<name>\</name>
+			<desc>Engage/Disengage Impulse engine</desc>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.toggle_impulse()</script>
+			</binding>
+		</key>
+		<key n="311">
+			<name>KP7</name>
+			<desc>Hover Up</desc>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.hover_grav(1, 0.15, 1)</script>
+			</binding>
+		</key>
+		<key n="305">
+			<name>KP1</name>
+			<desc>Hover Down</desc>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.hover_grav(-1, 0.15, 1)</script>
+			</binding>
+		</key>
+		<key n="362">
+			<name>KP7</name>
+			<desc>Hover Up</desc>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.hover_grav(1, 0.15, 1)</script>
+			</binding>
+		</key>
+		<key n="363">
+			<name>KP1</name>
+			<desc>Hover Down</desc>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>shuttle9.hover_grav(-1, 0.15, 1)</script>
+			</binding>
+		</key>
+	</keyboard>
+ </input>
+
+ <nasal>
+	<shuttle9>
+		<file>Aircraft/shuttle9/Nasal/shuttle9-09.nas</file>
+	</shuttle9>
+ </nasal>
+</PropertyList>
+

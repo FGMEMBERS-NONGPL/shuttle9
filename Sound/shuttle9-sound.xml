@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+
+ <fx>
+	<engine>
+	<name>rumble</name>
+	<mode>looped</mode>
+	<path>Sounds/jet.wav</path>
+	<property>velocities/airspeed-kt</property>
+	<volume>
+		<property>sim/model/shuttle9/sound/engines-volume-level</property>
+	</volume>
+	<pitch>
+		<property>sim/model/shuttle9/sound/pitch-level</property>
+	</pitch>
+	</engine>
+
+	<engine>
+		<name>overdrive</name>
+		<mode>looped</mode>
+		<path>Sounds/jet.wav</path>
+		<condition>
+			<greater-than-equals>
+				<property>velocities/airspeed-kt</property>
+				<value>6000</value>
+			</greater-than-equals>
+		</condition>
+		<volume>
+			<property>engines/engine/speed-max-powerlevel</property>
+			<factor>0.3</factor>
+			<offset>-1.9</offset>
+		</volume>
+		<pitch>
+			<property>engines/engine/speed-max-powerlevel</property>
+			<factor>0.25</factor>
+			<offset>-0.75</offset>
+		</pitch>
+	</engine>
+
+<!-- ground contacts -->
+	<landing>
+		<name>vertical ground contact</name>
+		<mode>once</mode>
+		<path>Sounds/helicopter-skid.wav</path>
+		<condition>
+			<property>sim/model/shuttle9/position/landing-wow</property>
+		</condition>
+	</landing>
+
+	<contact-slow>
+		<name>slow moving ground contact</name>
+		<mode>looped</mode>
+		<path>Sounds/squeal.wav</path>
+		<condition>
+			<property>sim/model/shuttle9/position/squeal-wow</property>
+		</condition>
+		<volume>
+			<property>velocities/abs-airspeed-kt</property>
+			<factor>0.0005</factor>
+			<max>0.1</max>
+		</volume>
+	</contact-slow>
+
+	<contact-continuous>
+		<name>ground contact</name>
+		<mode>looped</mode>
+		<path>Sounds/rumble.wav</path>
+		<condition>
+			<and>
+				<greater-than>
+					<property>sim/model/shuttle9/position/skid-wow</property>
+						<value>0.05</value>
+				</greater-than>
+				<greater-than>
+					<property>velocities/abs-airspeed-kt</property>
+					<value>20</value>
+				</greater-than>
+			</and>
+		</condition>
+		<volume>
+			<property>sim/model/shuttle9/position/skid-wow</property>
+			<min>0.0</min>
+			<max>1.0</max>
+		</volume>
+		<pitch>
+			<factor>0.01</factor>
+		</pitch>
+	</contact-continuous>
+
+	<crash-shields-holding>
+		<name>intense ground contact</name>
+		<mode>once</mode>
+		<path>Sounds/squeal.wav</path>
+		<condition>
+			<greater-than>
+				<property>sim/model/shuttle9/position/skid-wow</property>
+				<value>1.0</value>
+			</greater-than>
+		</condition>
+		<volume>
+			<factor>2.5</factor>
+		</volume>
+		<pitch>
+			<factor>0.1</factor>
+		</pitch>
+	</crash-shields-holding>
+
+ </fx>
+</PropertyList>
